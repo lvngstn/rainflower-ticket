@@ -1,0 +1,17 @@
+[tool.poetry]
+package-mode = false
+name = "rainflower-ticket"
+version = "0.1.0"
+description = "A short description of the project"
+authors = ["Aiden Livingston <aiden@example.com>"]
+readme = "README.md"
+repository = "https://github.com/lvngstn/rainflower-ticket"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+google-adk = "0.3.0"
+litellm = "1.66.3"
+google-generativeai = "0.8.5"
+python-dotenv = "1.1.0"
+deprecated = "1.2.15"
+requests = "^2.32.4"

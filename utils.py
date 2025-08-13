@@ -8,8 +8,8 @@ async def call_agent_async(runner, user_id, session_id, query):
     final_response_text = None
     agent_name = None
 
-
-    async for event in runner.run_async(user_id=user_id, session_id=session_id, new_message=content):
+    print("test0")
+    async for event in runner.run_async(user_id=user_id, session_id=session_id, new_message=content):        
         if event.author:
             agent_name = event.author
         
@@ -19,7 +19,7 @@ async def call_agent_async(runner, user_id, session_id, query):
 
     if final_response_text and agent_name:
         add_agent_response_to_history(
-            runner.session_service,
+            runner.session_service, 
             runner.app_name,
             user_id,
             session_id,

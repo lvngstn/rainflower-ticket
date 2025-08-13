@@ -6,11 +6,12 @@ article_search_instruction = """
 - You will be given a ticket
 - Using the ticket as search criteria, call the tool 'get_articles'.
 - Find the article name that best matches the topic of the ticket, and use that name to call the tool 'get_article'.
+- Do not return a message to the user about what you think is the best name of the 'get_articles' output.
 - Reformat the output of the tool 'get_article' to markdown.
 
 **Results**
 - A markdown-formatted version of the article.
-- If there are multiple good matches, return multiple markdown-formatted versions of the articles.
+- If there are multiple good matches, return the best fitting article.
 - If there is no good match, say 'No good match found'.
 
 **Tools**

@@ -9,7 +9,7 @@ def get_article(article_name: str) -> dict:
     Return the HTML content of the article with the given name.
     """
 
-    url = os.getenv("HUDU_URL") + "/api/v1/articles?name=" + article_name
+    url = os.getenv("HUDU_URL") + "/articles?name=" + article_name
     headers = {"x-api-key": os.getenv("HUDU_API_KEY")}
 
     response = requests.get(url, headers=headers)
@@ -30,7 +30,7 @@ def get_articles() -> dict:
     """
 
     names = []
-    url = os.getenv("HUDU_URL") + "/api/v1/articles"
+    url = os.getenv("HUDU_URL") + "/articles"
     headers = {"x-api-key": os.getenv("HUDU_API_KEY")}
 
     response = requests.get(url, headers=headers)

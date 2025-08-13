@@ -5,7 +5,9 @@ import os
 load_dotenv()
 
 def find_ticket(ticket_id: str) -> dict:
-    url = os.getenv("ATERA_URL") + "/api/v3/tickets/" + ticket_id
+    """ Returns the ticket with the given ID. """
+
+    url = os.getenv("ATERA_URL") + "/tickets/" + ticket_id
     headers = {"x-api-key": os.getenv("ATERA_API_KEY")}
 
     response = requests.get(url, headers=headers)

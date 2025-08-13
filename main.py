@@ -1,6 +1,6 @@
 import asyncio
-from rainflower_ticket_agent.agent import root_agent
 from dotenv import load_dotenv
+from agents.rainflower_ticket_agent.agent import root_agent
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 from utils import add_user_query_to_history, call_agent_async

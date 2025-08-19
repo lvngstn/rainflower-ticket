@@ -1,19 +1,30 @@
-[tool.poetry]
-package-mode = false
-name = "rainflower-ticket"
+[project]
+name = "rainflower_ticket_agent"
 version = "0.1.0"
-description = "A short description of the project"
-authors = ["Aiden Livingston <aiden@example.com>"]
+description = "AI agent for IT support tickets"
+authors = [
+    {name = "Aiden Livingston",email = "aidenlivingt@gmail.com"}
+]
 readme = "README.md"
-repository = "https://github.com/lvngstn/rainflower-ticket"
+requires-python = ">=3.11"
+dependencies = [
+    "google-adk (>=1.5.0,<2.0.0)",
+    "google-cloud-aiplatform[adk,agent-engines] (>=1.100.0,<2.0.0)",
+    "python-dotenv (>=1.1.1,<2.0.0)",
+]
 
-[tool.poetry.dependencies]
-python = "^3.11"
-google-adk = "0.3.0"
-litellm = "1.66.3"
-google-generativeai = "0.8.5"
-python-dotenv = "1.1.0"
-deprecated = "1.2.15"
-requests = "^2.32.4"
-fastapi = "^0.116.1"
-asyncio = "^4.0.0"
+[tool.poetry]
+
+[tool.poetry.group.dev.dependencies]
+google-adk = ">=1.5.0,<2.0.0"
+
+[tool.poetry.group.deployment]
+optional = true
+
+[tool.poetry.group.deployment.dependencies]
+absl-py = "^2.2.2"
+google-cloud-aiplatform = { version = ">=1.100.0", extras = ["adk","agent-engines"] }
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
